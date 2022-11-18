@@ -1,2 +1,0 @@
-<div class="center">
-Download a pdf version of this website <a href="./main.pdf" download="main">here</a>
