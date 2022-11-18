@@ -33,8 +33,6 @@ jobs:
       - name: Generate html
         run: |
           sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended 
-	  branchname=$(git symbolic-ref --short HEAD)  
-	  mkdir public/$branchname
           bash buildwebsite.sh
       - name: Setup Pages
         uses: actions/configure-pages@v1
