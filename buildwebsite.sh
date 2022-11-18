@@ -9,8 +9,10 @@ function buildwebsite() {
   for i in PN BD RB TS DJF DDF MGT MF OP proxyapps REF IND bib png pics corpics Animations
   do cp -r "$(pwd)/$i" ./public/$branchname/
   done
-  cp homepage.f90 *.css ./public/  
-  cp {*.tex,*.css,*.txt} public/$branchname/
+  cp homepage.f90 ./public/
+  cp sans-serif-lwarp-sagebrush.css ./public
+  cp sans-serif-lwarp-sagebrush.css ./sans-serif-lwarp-sagebrush.css/$branchname
+  cp {*.tex,*.txt} ./public/$branchname/
   cd ./public/$branchname/
   pdflatex  main.tex
   biber main.bcf
