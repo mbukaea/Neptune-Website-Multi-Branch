@@ -37,10 +37,10 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-pages-artifact@v1
         with:
           # Upload contents of public only
-          path: ./public
+          path: ./public/
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@main
