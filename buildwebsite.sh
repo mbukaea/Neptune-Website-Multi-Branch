@@ -84,7 +84,7 @@ function buildwebsite() {
   for file in *.html; do  sed -i -e '/<title>/r code.txt' ${file}; done
   fi
   cd ../
-  gfortran-mp-12 homepage.f90
+  gfortran homepage.f90
   ./a.out >> index.html
 }
 
