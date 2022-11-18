@@ -9,7 +9,7 @@ function buildwebsite() {
   for i in PN BD RB TS DJF DDF MGT MF OP proxyapps REF IND bib png pics corpics Animations
   do cp -r "$(pwd)/$i" ./public/$branchname/
   done
-  
+  cp homepage.f90 *.css ./public/  
   cp {*.tex,*.css,*.txt} public/$branchname/
   cd ./public/$branchname/
   pdflatex  main.tex
@@ -83,6 +83,9 @@ function buildwebsite() {
   #Add Javascript to allow copyable code
   for file in *.html; do  sed -i -e '/<title>/r code.txt' ${file}; done
   fi
+  cd ../
+  gfortran-mp-12 homepage.f90
+  ./a.out >> index.html
 }
 
 buildwebsite $1
