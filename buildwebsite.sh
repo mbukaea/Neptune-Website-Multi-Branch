@@ -83,7 +83,6 @@ function buildwebsite() {
   #Add Javascript to allow copyable code
   for file in *.html; do  sed -i -e '/<title>/r code.txt' ${file}; done
   fi
-  cp ./index.html ../
 }
 
 buildwebsite $1
