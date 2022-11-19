@@ -1,2 +1,0 @@
-77 list.txt
-154 list.txt
