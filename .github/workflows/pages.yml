@@ -48,8 +48,6 @@ jobs:
         with:
           # Upload contents of public only
           path: ./
-      - name: Commit new documentation to branch
-        uses: stefanzweifel/git-auto-commit-action@v4
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@main
