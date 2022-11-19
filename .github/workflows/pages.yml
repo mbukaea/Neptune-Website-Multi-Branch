@@ -31,7 +31,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: Deployment
+          ref: |
+            Deployment
+            main
+            Experimental
       - name: Generate html
         run: | 
           git checkout Deployment
