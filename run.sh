@@ -5,7 +5,7 @@ error=$?
 if [ $error -neq 0 ]
 then
 rm -rf ./main/
-git checkout main -- main
+git checkout remotes/origin/main -- main
 cd ./main
 bash buildwebsite.sh
 cd ..
@@ -18,7 +18,7 @@ error=$?
 if [ $error -neq 0 ]
 then
 rm -rf ./Experimental/
-git checkout Experimental --  Experimental
+git checkout  remotes/origin/Experimental --  Experimental
 cd ./Experimental
 bash buildwebsite.sh
 cd ..
