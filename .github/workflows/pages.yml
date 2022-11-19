@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          ref: Deployment,main,Experimental
       - name: Generate html
         run: | 
           git checkout Deployment
