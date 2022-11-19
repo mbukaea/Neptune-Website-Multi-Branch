@@ -30,15 +30,15 @@ jobs:
     steps:
       - name: Get all branches
         before_script: | 
-        if [[ -n "$CI_COMMIT_BRANCH" ]]; then  # branch pipelines
-            git remote set-url origin "https://gitlab-ci-token:${$CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
-            git fetch origin
-            git checkout $CI_COMMIT_BRANCH
-        fi
-        if [[ -n "$CI_MERGE_REQUEST_IID" ]]; then  # MR pipelines
-            git remote set-url origin "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_MERGE_REQUEST_SOURCE_PROJECT_PATH}.git"
-            git fetch origin
-        fi
+          if [[ -n "$CI_COMMIT_BRANCH" ]]; then  # branch pipelines
+             git remote set-url origin "https://gitlab-ci-token:${$CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
+             git fetch origin
+             git checkout $CI_COMMIT_BRANCH
+          fi
+          if [[ -n "$CI_MERGE_REQUEST_IID" ]]; then  # MR pipelines
+             git remote set-url origin "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_MERGE_REQUEST_SOURCE_PROJECT_PATH}.git"
+             git fetch origin
+          fi
       - name: Generate html
         run: | 
           git checkout Deployment
