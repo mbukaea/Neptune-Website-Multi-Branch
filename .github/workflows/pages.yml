@@ -31,14 +31,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: main
-      - name: Checkout2
-        uses: actions/checkout@v3
-        with:
           ref: Development
       - name: Generate html
         run: | 
-          git checkout Deployment
+          git branch -a
           sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
           bash run.sh
       - name: Setup Pages
