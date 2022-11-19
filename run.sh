@@ -1,4 +1,5 @@
 #!/bin/bash
+rm index.html
 git rev-parse remotes/origin/main >> hash1.txt
 diff hash1.txt ./main/hash.txt > /dev/null 2>&1
 error=$? 
