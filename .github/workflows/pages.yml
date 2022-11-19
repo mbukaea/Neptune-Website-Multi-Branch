@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Get all branches
-        before_script: | 
+        run: | 
           if [[ -n "$CI_COMMIT_BRANCH" ]]; then  # branch pipelines
              git remote set-url origin "https://gitlab-ci-token:${$CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
              git fetch origin
