@@ -13,7 +13,6 @@ rm hash.txt
 git rev-parse remotes/origin/main >> hash.txt
 cd ..
 fi
-
 git rev-parse remotes/origin/Experimental >> hash2.txt
 diff hash2.txt ./Experimental/hash.txt > /dev/null 2>&1
 error=$?
