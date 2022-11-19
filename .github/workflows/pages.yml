@@ -29,10 +29,15 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Generate html
         run: | 
-          git pull
+          git fetch --no-tags --depth=1 origin main
+          git checkout -b main
+          git checkout ${{ github.event.pull_request.head.sha }}
+          git fetch --no-tags --depth=1 origin Experimental
+          git checkout -b Experimental
+          git checkout ${{ github.event.pull_request.head.sha }}
           git branch -a
           sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
           bash run.sh
