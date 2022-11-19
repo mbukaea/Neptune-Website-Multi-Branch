@@ -37,7 +37,9 @@ jobs:
           git fetch --no-tags --depth=1 origin Experimental
           git checkout -b Experimental
           git checkout ${{ github.event.pull_request.head.sha }}
-          git branch -a
+          git fetch --no-tags --depth=1 origin Deployment
+          git checkout -b Deployment
+          git checkout ${{ github.event.pull_request.head.sha }}
           sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
           bash run.sh
       - name: Commit new documentation to branch
