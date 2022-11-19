@@ -24,8 +24,6 @@ bash buildwebsite.sh
 mv ../hash.txt .
 cd ..
 fi
-
-cp ./main/sans-serif-lwarp-sagebrush.css ./
 gfortran homepage.f90
 ./a.out >> index.html
 rm a.out index.html list.txt num.txt hash.txt
