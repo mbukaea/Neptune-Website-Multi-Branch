@@ -3,6 +3,7 @@ git rev-parse main >> hash.txt
 diff hash.txt ./main/hash.txt > /dev/null 2>&1
 error=$? 
 if [ $error -neq 0 ]
+then
 rm -rf ./main/
 git checkout main -- main
 cd ./main
