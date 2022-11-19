@@ -31,7 +31,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          ref: ["*"]
+          ref: main Experimental
       - name: Generate html
         run: | 
           git checkout Deployment
