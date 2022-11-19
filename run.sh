@@ -26,5 +26,5 @@ rm hash.txt
 fi
 
 cp ./main/sans-serif-lwarp-sagebrush.css ./
-gfortran-mp-12 homepage.f90
+gfortran homepage.f90
 ./a.out >> index.html

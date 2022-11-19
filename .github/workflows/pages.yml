@@ -32,6 +32,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Generate html
         run: |
+	  git branch -a 
           sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
           bash run.sh
       - name: Setup Pages
