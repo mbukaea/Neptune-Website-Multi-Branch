@@ -28,13 +28,14 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-22.04
     steps:
-      - name: Get all branches
-        run: | 
-             git remote set-url origin "https://gitlab-ci-token:${$CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_PROJECT_PATH}.git"
-             git fetch origin
-             git checkout $CI_COMMIT_BRANCH
-             git remote set-url origin "https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/${CI_MERGE_REQUEST_SOURCE_PROJECT_PATH}.git"
-             git fetch origin
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: main
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          ref: Development
       - name: Generate html
         run: | 
           git checkout Deployment
