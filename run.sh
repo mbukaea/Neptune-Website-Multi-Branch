@@ -2,8 +2,7 @@
 git rev-parse main >> hash.txt
 diff hash.txt ./main/hash.txt > /dev/null 2>&1
 error=$? 
-if [ $error -eq 1 ]
-then
+if [ $error -neq 0 ]
 rm -rf ./main/
 git checkout main -- main
 cd ./main
@@ -15,7 +14,7 @@ fi
 git rev-parse Experimental >> hash.txt
 diff hash.txt ./Experimental/hash.txt > /dev/null 2>&1
 error=$?
-if [ $error -eq 1 ]
+if [ $error -neq 0 ]
 then
 rm -rf ./Experimental/
 git checkout Experimental --  Experimental
