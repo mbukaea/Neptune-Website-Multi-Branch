@@ -30,8 +30,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-	with:
-	  fetch-depth: 0
+	with: fetch-depth: 0
       - name: Generate html
         run: | 
           sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
