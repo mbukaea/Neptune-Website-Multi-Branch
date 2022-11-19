@@ -2,14 +2,6 @@
 #to create the website
 #Compiles website using lwarp package
 function buildwebsite() {
-  branchname=$(git symbolic-ref --short HEAD)  
-  rm -rf public/$branchname/
-  mkdir -p public/$branchname/
-  for i in PN BD RB TS DJF DDF MGT MF OP proxyapps REF IND bib png pics corpics Animations
-  do cp -r "$(pwd)/$i" ./public/$branchname/
-  done
-  cp {*.tex,*.css,*.txt} ./public/$branchname/
-  cd ./public/$branchname/
   pdflatex  main.tex
   biber main.bcf
   pdflatex main.tex
