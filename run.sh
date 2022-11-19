@@ -28,4 +28,4 @@ cd ..
 fi
 gfortran homepage.f90
 ./a.out >> index.html
-rm a.out hash1.txt hash2.txt index.html list.txt num.txt
+rm a.out hash1.txt hash2.txt list.txt num.txt
