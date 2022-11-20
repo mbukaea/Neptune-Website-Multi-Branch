@@ -1,17 +1,16 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: Deploy static content to Pages
 
-on:
-  # Runs on pushes targeting the default branch
+on: 
   push:
-    branches: ["main"]
+    branches: ["**"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -29,19 +28,32 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
+        with:
+          ref: Deployment
       - name: Generate html
-        run: |
-          sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended 
-          mkdir public
-          bash buildwebsite.sh
+        run: | 
+          git fetch --no-tags --depth=1 origin main
+          git checkout -b main
+          git checkout ${{ github.event.pull_request.head.sha }}
+          git fetch --no-tags --depth=1 origin Experimental
+          git checkout -b Experimental
+          git checkout ${{ github.event.pull_request.head.sha }}
+          git checkout Deployment
+          sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
+          bash run.sh
+      - name: Commit new documentation to branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Automated Change  
+          branch: Deployment
       - name: Setup Pages
         uses: actions/configure-pages@v1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload contents of public only
-          path: 'public/'
+          path: ./
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@main
