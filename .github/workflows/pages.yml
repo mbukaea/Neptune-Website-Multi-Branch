@@ -41,7 +41,6 @@ jobs:
           git checkout -b Experimental
           git checkout ${{ github.event.pull_request.head.sha }}
           git checkout Deployment
-          sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
           bash run.sh
       - name: Commit new documentation to branch
         uses: stefanzweifel/git-auto-commit-action@v4
