@@ -30,7 +30,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          ref: my-branch
+          ref: Deployment
       - name: Generate html
         run: | 
           git fetch --no-tags --depth=1 origin main
