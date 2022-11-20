@@ -33,10 +33,10 @@ jobs:
           ref: Deployment
       - name: Generate html
         run: | 
-          git fetch --no-tags --depth=1 origin main
+          git fetch --no-tags origin main
           git checkout -b main
           git checkout ${{ github.event.pull_request.head.sha }}
-          git fetch --no-tags --depth=1 origin Experimental
+          git fetch --no-tags origin Experimental
           git checkout -b Experimental
           git checkout ${{ github.event.pull_request.head.sha }}
           git checkout Deployment
