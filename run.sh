@@ -7,7 +7,7 @@ if [ $error -eq 1 ]
 then
 num1=$(git log -1 --pretty="format:%ct" ./main)
 num2=$(git log Deployment..remotes/origin/main -1 --pretty="format:%ct" ./main)
-if [ "$num2" -gt "$num1" ]
+if (( $num2 > $num1 ))
 then 
 rm -rf ./main/
 git checkout remotes/origin/main -- main
@@ -25,7 +25,7 @@ if [ $error -eq 1 ]
 then
 num1=$(git log -1 --pretty="format:%ct" ./Experimental)
 num2=$(git log Deployment..remotes/origin/Experimental -1 --pretty="format:%ct" ./Experimental)
-if [ "$num2" -gt "$num1" ]
+if (( $num2 > $num1  ))
 then
 rm -rf ./Experimental/
 git checkout remotes/origin/Experimental --  Experimental
