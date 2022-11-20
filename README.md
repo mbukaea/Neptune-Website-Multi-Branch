@@ -1,5 +1,5 @@
 # Neptune-Website
-
+This README is for the main branch.
 ## Installation on Ubuntu 22.04
 
 It should be sufficient to first clone this repo, cd into the directory and then:
