@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.19)  19 NOV 2022 22:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.20)  20 NOV 2022 10:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2389,11 +2389,11 @@ File: "lwarp_mathjax.txt"  (verbatim)
 (./main_html.sidetoc) [256] (./IND/IND.tex)) [257] (./metackn.tex) [258]
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 206.
+(Font)              using `T1/lmr/m/scsl' instead on input line 205.
 
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 206.
+(Font)              using `T1/lmr/m/scsl' instead on input line 205.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -2431,7 +2431,7 @@ sso9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fo
 nts/type1/public/lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pf
 b></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb></usr/share/texmf/fonts/typ
 e1/public/lm/lmtt9.pfb>
-Output written on main_html.pdf (260 pages, 959909 bytes).
+Output written on main_html.pdf (260 pages, 959806 bytes).
 PDF statistics:
  956 PDF objects out of 1000 (max. 8388607)
  646 compressed objects within 7 object streams
