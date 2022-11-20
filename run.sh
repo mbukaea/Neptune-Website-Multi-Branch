@@ -9,7 +9,7 @@ num1=$(git log -1 --pretty="format:%ct" ./main)
 num2=$(git log Deployment..remotes/origin/main -1 --pretty="format:%ct" ./main)
 if (( $num2 > $num1 ))
 then 
-echo $num1 $num2
+sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
 rm -rf ./main/
 git checkout remotes/origin/main -- main
 cd ./main
@@ -22,14 +22,13 @@ fi
 git rev-parse remotes/origin/Experimental >> hash2.txt
 diff hash2.txt ./Experimental/hash.txt > /dev/null 2>&1
 error=$?
-echo $num1 $num2
 if [ $error -eq 1 ]
 then
 num1=$(git log -1 --pretty="format:%ct" ./Experimental)
 num2=$(git log Deployment..remotes/origin/Experimental -1 --pretty="format:%ct" ./Experimental)
 if (( $num2 > $num1  ))
 then
-echo $num1 $num2
+sudo apt install -y biber latexmk texlive-bibtex-extra texlive-lang-japanese texlive-latex-extra texlive-latex-recommended gfortran
 rm -rf ./Experimental/
 git checkout remotes/origin/Experimental --  Experimental
 cd ./Experimental
