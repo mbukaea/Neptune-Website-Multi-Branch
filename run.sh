@@ -3,6 +3,10 @@ rm index.html
 git rev-parse remotes/origin/main >> hash1.txt
 diff hash1.txt ./main/hash.txt > /dev/null 2>&1
 error=$? 
+num1=$(git log -1 --pretty="format:%ct" ./main)
+num2=$(git log Deployment..remotes/origin/main -1 --pretty="format:%ct" ./main)
+echo $num1
+echo $num2
 if [ $error -eq 1 ]
 then
 num1=$(git log -1 --pretty="format:%ct" ./main)
@@ -21,6 +25,10 @@ fi
 git rev-parse remotes/origin/Experimental >> hash2.txt
 diff hash2.txt ./Experimental/hash.txt > /dev/null 2>&1
 error=$?
+num1=$(git log -1 --pretty="format:%ct" ./Experimental)
+num2=$(git log Deployment..remotes/origin/Experimental -1 --pretty="format:%ct" ./Experimental)
+echo $num1
+echo $num2
 if [ $error -eq 1 ]
 then
 num1=$(git log -1 --pretty="format:%ct" ./Experimental)
